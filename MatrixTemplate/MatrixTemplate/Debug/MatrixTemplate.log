@@ -1,0 +1,31 @@
+﻿  MatrixTemplate.cpp
+d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(19): error C2676: binary '[': 'const Left' does not define this operator or a conversion to a type acceptable to the predefined operator
+          with
+          [
+              Left=my_matrix<int,2,2>
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(19): note: while compiling class template member function 'T MatrixSum<T,2,2,my_matrix<T,2,2>,my_matrix<T,2,2>>::operator ()(int,int) const'
+          with
+          [
+              T=int
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(35): note: see reference to function template instantiation 'T MatrixSum<T,2,2,my_matrix<T,2,2>,my_matrix<T,2,2>>::operator ()(int,int) const' being compiled
+          with
+          [
+              T=int
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(56): note: see reference to class template instantiation 'MatrixSum<T,2,2,my_matrix<T,2,2>,my_matrix<T,2,2>>' being compiled
+          with
+          [
+              T=int
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(71): note: see reference to function template instantiation 'MatrixSum<T,2,2,my_matrix<T,2,2>,my_matrix<T,2,2>> operator +<int,2,2>(const my_matrix<T,2,2> &,my_matrix<T,2,2> &)' being compiled
+          with
+          [
+              T=int
+          ]
+d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(19): error C2676: binary '[': 'const Right' does not define this operator or a conversion to a type acceptable to the predefined operator
+          with
+          [
+              Right=my_matrix<int,2,2>
+          ]
