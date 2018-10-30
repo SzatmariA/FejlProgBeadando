@@ -1,1 +1,22 @@
-﻿  MatrixTemplate.vcxproj -> D:\University\MSC\FejlettProg\gyakorlat\Kotprog\FejlProgBeadando\MatrixTemplate\Debug\MatrixTemplate.exe
+﻿  MatrixTemplate.cpp
+d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(44): error C2064: term does not evaluate to a function taking 2 arguments
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(40): note: while compiling class template member function 'T MatrixMultWithC<T,2,2,my_matrix<T,2,2>,T>::operator ()(int,int) const'
+          with
+          [
+              T=int
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(77): note: see reference to function template instantiation 'T MatrixMultWithC<T,2,2,my_matrix<T,2,2>,T>::operator ()(int,int) const' being compiled
+          with
+          [
+              T=int
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(159): note: see reference to class template instantiation 'MatrixMultWithC<T,2,2,my_matrix<T,2,2>,T>' being compiled
+          with
+          [
+              T=int
+          ]
+  d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(219): note: see reference to function template instantiation 'MatrixMultWithC<T,2,2,my_matrix<T,2,2>,T> operator *<int,2,2>(const my_matrix<T,2,2> &,T &)' being compiled
+          with
+          [
+              T=int
+          ]
