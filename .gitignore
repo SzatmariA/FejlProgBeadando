@@ -6,6 +6,7 @@
 *.lo
 *.o
 *.obj
+*.opendb
 
 # Precompiled Headers
 *.gch
@@ -31,3 +32,4 @@
 *.exe
 *.out
 *.app
+*.suo
