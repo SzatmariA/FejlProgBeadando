@@ -275,24 +275,24 @@ inline auto operator+(const MatrixSub<T, N, M, Left, Right> &l, const MatrixMult
 	return MatrixSum<T, N, M, MatrixSub<T, N, M, Left, Right>, MatrixMultWithConstRight<T, N, M, Left2, Right2>>(l, r);
 }
 
-template<class T, int N, int M, int K, class Left, class Right, class Left2, class Right2>
-inline auto operator+(const MatrixMultWithConstLeft<T, N, M, Left, Right> &l, const MatrixMult<T, N, M, K, Left2, Right2> &r) {
-	return MatrixSum<T, N, K, MatrixMultWithConstLeft<T, N, M, Left, Right>, MatrixMult<T, N, M, K, Left2, Right2>>(l, r);
+template<class T, int N, int M, int K, int E, class Right, class Left2, class Right2>
+inline auto operator+(const MatrixMultWithConstLeft<T, N, M, T, Right> &l, const MatrixMult<T, N, K, E, Left2, Right2> &r) {
+	return MatrixSum<T, N, E, MatrixMultWithConstLeft<T, N, M, T, Right>, MatrixMult<T, N, K, E, Left2, Right2>>(l, r);
 }
 
-template<class T, int N, int M, int K, class Left, class Right, class Left2, class Right2>
-inline auto operator+(const MatrixMultWithConstRight<T, N, M, Left, Right> &l, const MatrixMult<T, N, M, K, Left2, Right2> &r) {
-	return MatrixSum<T, N, K, MatrixMultWithConstRight<T, N, M, Left, Right>, MatrixMult<T, N, M, K, Left2, Right2>>(l, r);
+template<class T, int N, int M, int K, int E, class Right, class Left2, class Right2>
+inline auto operator+(const MatrixMultWithConstRight<T, N, M, T, Right> &l, const MatrixMult<T, N, K, E, Left2, Right2> &r) {
+	return MatrixSum<T, N, E, MatrixMultWithConstRight<T, N, M, T, Right>, MatrixMult<T, N, K, E, Left2, Right2>>(l, r);
 }
 
-template<class T, int N, int M, int K, class Left, class Right, class Left2, class Right2>
-inline auto operator+(const MatrixMult<T, N, M, K, Left, Right> &l, const MatrixMultWithConstLeft<T,  M, K,  Left2, Right2> &r) {
-	return MatrixSum<T, N, K, MatrixMult<T, N, M, K, Left, Right>, MatrixMultWithConstLeft<T, M, K, Left2, Right2>>(l, r);
+template<class T, int N, int M, int K, class Left, class Right, class Right2>
+inline auto operator+(const MatrixMult<T, N, M, K, Left, Right> &l, const MatrixMultWithConstLeft<T,  M, K,  T, Right2> &r) {
+	return MatrixSum<T, N, K, MatrixMult<T, N, M, K, Left, Right>, MatrixMultWithConstLeft<T, M, K, T, Right2>>(l, r);
 }
 
-template<class T, int N, int M, int K, class Left, class Right, class Left2, class Right2>
-inline auto operator+(const MatrixMult<T, N, M, K, Left, Right> &l, const MatrixMultWithConstRight<T, M, K, Left2, Right2> &r) {
-	return MatrixSum<T, N, K, MatrixMult<T, N, M, K, Left, Right>, MatrixMultWithConstRight<T, M, K, Left2, Right2>>(l, r);
+template<class T, int N, int M, int K, class Left, class Right, class Left2>
+inline auto operator+(const MatrixMult<T, N, M, K, Left, Right> &l, const MatrixMultWithConstRight<T, M, K, Left2, T> &r) {
+	return MatrixSum<T, N, K, MatrixMult<T, N, M, K, Left, Right>, MatrixMultWithConstRight<T, M, K, Left2, T>>(l, r);
 }
 
 template<class T, int N, int M, int K, class Left, class Right>
@@ -431,6 +431,12 @@ inline auto operator*(const MatrixSum<T,N,M, Left, Right> &l, my_matrix<T, M, K>
 	//hiba lehet, hogy nem N*M es M*N a masik.
 }
 
+template<class T, int N, int M, int K, class Left, class Right>
+inline auto operator*(const my_matrix<T, N, M> &l, const MatrixSum<T, M, K, Left, Right>  &r) {
+	return MatrixMult<T, N, M, K, my_matrix<T, N, M>, MatrixSum<T, M, K, Left, Right>>(l, r);
+	//hiba lehet, hogy nem N*M es M*N a masik.
+}
+
 template<class T, int N, int M, int K, class Left, class Right, class Left2, class Right2>
 inline auto operator*(const MatrixSum<T, N, M, Left, Right> &l, const MatrixSum<T, M, K, Left2, Right2> &r) {
 	return MatrixMult<T, N, M, K, MatrixSum<T, N, M, Left, Right>, MatrixSum<T, M, K, Left2, Right2>>(l, r);
@@ -440,6 +446,18 @@ inline auto operator*(const MatrixSum<T, N, M, Left, Right> &l, const MatrixSum<
 template<class T, int N, int M, int K, class Left, class Right, class Left2, class Right2>
 inline auto operator*(const MatrixSum<T, N, M, Left, Right> &l, const MatrixSub<T, M, K, Left2, Right2> &r) {
 	return MatrixMult<T, N, M, K, MatrixSum<T, N, M, Left, Right>, MatrixSub<T, M, K, Left2, Right2>>(l, r);
+	//hiba lehet, hogy nem N*M es M*N a masik.
+}
+
+template<class T, int N, int M, int K, class Left, class Right>
+inline auto operator*(const MatrixSub<T, N, M, Left, Right> &l, my_matrix<T, M, K> &r) {
+	return MatrixMult<T, N, M, K, MatrixSub<T, N, M, Left, Right>, my_matrix<T, M, K>>(l, r);
+	//hiba lehet, hogy nem N*M es M*N a masik.
+}
+
+template<class T, int N, int M, int K, class Left, class Right>
+inline auto operator*(const my_matrix<T, N, M> &l, const MatrixSub<T, M, K, Left, Right>  &r) {
+	return MatrixMult<T, N, M, K, my_matrix<T, N, M>, MatrixSub<T, M, K, Left, Right>>(l, r);
 	//hiba lehet, hogy nem N*M es M*N a masik.
 }
 
