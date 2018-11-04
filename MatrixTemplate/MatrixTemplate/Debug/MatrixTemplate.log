@@ -1,3 +1,3 @@
 ﻿  MatrixTemplate.cpp
-d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(518): warning C4101: 'mtx7': unreferenced local variable
+d:\university\msc\fejlettprog\gyakorlat\kotprog\fejlprogbeadando\matrixtemplate\matrixtemplate\matrixtemplate.cpp(530): warning C4101: 'mtx6': unreferenced local variable
   MatrixTemplate.vcxproj -> D:\University\MSC\FejlettProg\gyakorlat\Kotprog\FejlProgBeadando\MatrixTemplate\Debug\MatrixTemplate.exe
